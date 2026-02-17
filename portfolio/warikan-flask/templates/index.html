@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>割り勘アプリ（Flask版）</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f4f1e9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 25px;
+      width: 320px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #5a4634;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #5a4634;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #c8b8a6;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background: #8b6f47;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #6e5738;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      color: #5a4634;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>割り勘アプリ</h2>
+    <form method="POST">
+      <label>金額</label>
+      <input type="number" name="price" value="1000" required>
+
+      <label>人数</label>
+      <input type="number" name="people" value="4" required>
+
+      <button type="submit">実行</button>
+    </form>
+
+    <div class="result">{{ result }}</div>
+  </div>
+</body>
+</html>
